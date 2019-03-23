@@ -30,7 +30,16 @@ public class ObjectPooler : MonoBehaviour
             }
         }
     }
-
+    public void Judge(int noteType)
+    {
+        foreach(GameObject obj in poolsOfNotes[noteType - 1])
+        {
+            if (obj.activeInHierarchy)
+            {
+                obj.GetComponent<NoteBehaviour>().Judge();
+            }
+        }
+    }
     public GameObject getObject(int noteType)
     {
         foreach(GameObject obj in poolsOfNotes[noteType - 1])

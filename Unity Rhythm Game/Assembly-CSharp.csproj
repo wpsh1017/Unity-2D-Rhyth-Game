@@ -315,6 +315,39 @@
     <Reference Include="Unity.Tasks">
       <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Parse/Plugins/Unity.Tasks.dll</HintPath>
     </Reference>
+    <Reference Include="UDP">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UDP/UDP.dll</HintPath>
+    </Reference>
+    <Reference Include="ChannelPurchase">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityChannel/ChannelPurchase.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityStore">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityChannel/UnityStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Editor">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Purchasing.Common">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Stores">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
+    </Reference>
+    <Reference Include="Apple">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
+    </Reference>
+    <Reference Include="FacebookStore">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Security">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Tizen">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Tizen/Tizen.dll</HintPath>
+    </Reference>
+    <Reference Include="winrt">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -326,39 +359,6 @@
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Library/PackageCache/com.unity.purchasing@2.0.6/UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="ChannelPurchase">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityChannel/ChannelPurchase.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityStore">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityChannel/UnityStore.dll</HintPath>
-    </Reference>
-    <Reference Include="UDP">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UDP/UDP.dll</HintPath>
-    </Reference>
-    <Reference Include="Security">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Stores">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
-    </Reference>
-    <Reference Include="Editor">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Purchasing.Common">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="winrt">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
-    </Reference>
-    <Reference Include="FacebookStore">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll</HintPath>
-    </Reference>
-    <Reference Include="Apple">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
-    </Reference>
-    <Reference Include="Tizen">
-      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Plugins/UnityPurchasing/Bin/Tizen/Tizen.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.9f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

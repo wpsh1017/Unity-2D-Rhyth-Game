@@ -45,7 +45,7 @@ public class SongSelectManager : MonoBehaviour, IStoreListener
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.Stop();
         // 리소스에서 비트 텍스트 파일을 불러옵니다.
-        TextAsset textAsset = Resources.Load<TextAsset>("Beats/" + musicIndex.ToString());
+        TextAsset textAsset = textAssets[musicCount - 1];
         StringReader stringReader = new StringReader(textAsset.text);
         // 첫 번째 줄에 적힌 곡 이름을 읽어서 UI를 업데이트합니다.
         musicTitleUI.text = stringReader.ReadLine();
@@ -54,11 +54,11 @@ public class SongSelectManager : MonoBehaviour, IStoreListener
         // 세 번째 줄에 적힌 BPM을 읽어 UI를 업데이트합니다.
         bpmUI.text = "BPM: " + stringReader.ReadLine().Split(' ')[0];
         // 리소스에서 비트 음악 파일을 불러와 재생합니다.
-        AudioClip audioClip = Resources.Load<AudioClip>("Beats/" + musicIndex.ToString());
+        AudioClip audioClip = audioClips[musicCount - 1];
         audioSource.clip = audioClip;
         audioSource.Play();
         // 리소스에서 비트 이미지 파일을 불러옵니다.
-        musicImageUI.sprite = Resources.Load<Sprite>("Beats/" + musicIndex.ToString());
+        musicImageUI.sprite = sprites[musicCount - 1];
         // 파이어베이스 접근합니다.
         DatabaseReference reference;
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://unity-rhythm-game-tutori-17ce3.firebaseio.com/");
@@ -122,9 +122,6 @@ public class SongSelectManager : MonoBehaviour, IStoreListener
         {
             controller.InitiatePurchase(productID);
         }
-        /*
-      
-        */
     }
 
     public void Right()
@@ -140,9 +137,23 @@ public class SongSelectManager : MonoBehaviour, IStoreListener
         if (musicIndex < 1) musicIndex = musicCount;
         UpdateSong(musicIndex);
     }
-    // Start is called before the first frame update
+
+    Sprite[] sprites;
+    AudioClip[] audioClips;
+    TextAsset[] textAssets;
+
     void Start()
     {
+        sprites = new Sprite[musicCount];
+        audioClips = new AudioClip[musicCount];
+        textAssets = new TextAsset[musicCount];
+        // 각 곡의 정보를 미리 읽습니다.
+        for(int i = 1;i<= musicCount; i++)
+        {
+            sprites[i - 1] = Resources.Load<Sprite>("Beats/" + i.ToString());
+            audioClips[i - 1] = Resources.Load<AudioClip>("Beats/" + i.ToString());
+            textAssets[i - 1] = Resources.Load<TextAsset>("Beats/" + i.ToString());
+        }
         userUI.text = PlayerInformation.auth.CurrentUser.Email + " 님, 환영합니다.";
         musicIndex = 1;
         UpdateSong(musicIndex);
