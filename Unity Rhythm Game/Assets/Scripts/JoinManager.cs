@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Auth;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class JoinManager : MonoBehaviour
 {
@@ -61,13 +62,18 @@ public class JoinManager : MonoBehaviour
             {
                 if(!task.IsCanceled && !task.IsFaulted)
                 {
-                    messageUI.text = "회원가입이 완료되었습니다.";
+                    SceneManager.LoadScene("LoginScene");
                 }
                 else
                 {
                     messageUI.text = "이미 사용 중이거나 형식이 바르지 않습니다.";
                 }
             }
-            );
+        );
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("LoginScene");
     }
 }

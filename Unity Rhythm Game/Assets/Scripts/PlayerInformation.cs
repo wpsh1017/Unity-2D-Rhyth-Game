@@ -9,4 +9,5 @@ public static class PlayerInformation
     public static string selectedMusic { get; set; }
     public static string musicTitle { get; set; }
     public static string musicArtist { get; set; }
+    public static Firebase.Auth.FirebaseAuth auth; // 씬이 전환되면 정보가 사라지기 때문에 이를 저장하기 위한 변수 
 }
