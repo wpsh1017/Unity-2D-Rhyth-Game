@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    // 싱글톤 처리 
+    // Game Manager를 싱글톤 처리 
     public static GameManager instance { get; set; }
 
     private void Awake()
@@ -17,8 +17,15 @@ public class GameManager : MonoBehaviour
         else if (instance != this) Destroy(gameObject);
     }
 
-    public float noteSpeed; 
+    public float noteSpeed;
 
+    public enum judges { NONE = 0,  BAD,  GOOD,  PERFECT,  MISS };
+    /*
+     * BAD : 1 
+     * GOOD : 2
+     * Perfect : 3
+     * 
+     */
     // Start is called before the first frame update
     void Start()
     {
