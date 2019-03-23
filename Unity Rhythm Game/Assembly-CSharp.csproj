@@ -74,7 +74,9 @@
     <None Include="Assets\Resources\Beats\1.txt" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\Resources\Beats\2.txt" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-database-unity\maven-metadata.xml" />
     <None Include="Assets\Firebase\Plugins\link.xml" />
+    <None Include="Assets\Firebase\Plugins\Http\link.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -318,6 +320,12 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Firebase/Plugins/Mono/Firebase.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Sharpen">
+      <HintPath>C:/Unity Rhythm Game Project/Project/Unity-2D-Rhythm-Game/Unity Rhythm Game/Assets/Firebase/Plugins/Google.Sharpen.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.9f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
