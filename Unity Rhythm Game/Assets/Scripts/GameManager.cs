@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     //음악 변수
     private AudioSource audioSource;
-    public string music = "1";
 
     // 판정 모드 변수
     public bool autoPerfect;
@@ -50,7 +49,7 @@ public class GameManager : MonoBehaviour
     void MusicStart()
     {
         // 리소스에서 비트 음악 파일을 불러와 재생합니다.
-        AudioClip audioClip = Resources.Load<AudioClip>("Beats/" + music);
+        AudioClip audioClip = Resources.Load<AudioClip>("Beats/" + PlayerInformation.selectedMusic);
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioClip;
         audioSource.Play();
@@ -116,7 +115,7 @@ public class GameManager : MonoBehaviour
         //콤보가 2 이상일 때만 콤보 이미지를 보여줍니다.
         if(combo >= 2)
         {
-            comboText.text = "COMBO" + combo.ToString();
+            comboText.text = "COMBO " + combo.ToString();
             comboAnimator.SetTrigger("Show");
         }
         if(maxCombo < combo)
