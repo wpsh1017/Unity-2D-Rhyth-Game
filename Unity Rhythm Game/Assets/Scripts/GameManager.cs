@@ -42,6 +42,9 @@ public class GameManager : MonoBehaviour
     private AudioSource audioSource;
     public string music = "1";
 
+    // 판정 모드 변수
+    public bool autoPerfect;
+
     // 음악을 실행할 함수입니다.
     void MusicStart()
     {

@@ -48,6 +48,11 @@ public class NoteBehaviour : MonoBehaviour
         else if (other.gameObject.tag == "Perfect Line")
         {
             judge = GameManager.judges.PERFECT;
+            if (GameManager.instance.autoPerfect)
+            {
+                GameManager.instance.ProcessJudge(judge, noteType);
+                gameObject.SetActive(false);
+            }
         }
         else if (other.gameObject.tag == "Miss Line")
         {
