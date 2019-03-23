@@ -106,9 +106,5 @@ public class NoteController : MonoBehaviour
         SceneManager.LoadScene("GameResultScene");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
