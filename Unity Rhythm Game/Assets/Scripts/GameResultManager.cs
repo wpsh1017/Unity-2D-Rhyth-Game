@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System;
+using Firebase;
+using Firebase.Unity.Editor;
+using Firebase.Database;
 
 public class GameResultManager : MonoBehaviour
 {
@@ -13,10 +16,14 @@ public class GameResultManager : MonoBehaviour
     public Text maxComboUI;
     public Image RankUI;
 
+    public Text rank1UI;
+    public Text rank2UI;
+    public Text rank3UI;
+
     void Start()
     {
         musicTitleUI.text = PlayerInformation.musicTitle;
-        scoreUI.text = "점수: " +(int) PlayerInformation.score;
+        scoreUI.text = "점수: " + (int)PlayerInformation.score;
         maxComboUI.text = "최대 콤보: " + PlayerInformation.maxCombo;
         // 리소스에서 비트 텍스트 파일을 불러옵니다.
         TextAsset textAsset = Resources.Load<TextAsset>("Beats/" + PlayerInformation.selectedMusic);
@@ -30,22 +37,65 @@ public class GameResultManager : MonoBehaviour
         int scoreA = Convert.ToInt32(beatInformation.Split(' ')[4]);
         int scoreB = Convert.ToInt32(beatInformation.Split(' ')[5]);
         // 성적에 맞는 랭크 이미지를 불러옵니다.
-        if(PlayerInformation.score >= scoreS)
+        if (PlayerInformation.score >= scoreS)
         {
             RankUI.sprite = Resources.Load<Sprite>("Sprites/Rank S");
         }
-        else if(PlayerInformation.score >= scoreA)
+        else if (PlayerInformation.score >= scoreA)
         {
             RankUI.sprite = Resources.Load<Sprite>("Sprites/Rank A");
         }
-        else if(PlayerInformation.score >= scoreB)
+        else if (PlayerInformation.score >= scoreB)
         {
             RankUI.sprite = Resources.Load<Sprite>("Sprites/Rank B");
         }
         else
             RankUI.sprite = Resources.Load<Sprite>("Sprites/Rank C");
+        rank1UI.text = "데이터를 불러오는 중입니다.";
+        rank2UI.text = "데이터를 불러오는 중입니다.";
+        rank3UI.text = "데이터를 불러오는 중입니다.";
+        DatabaseReference reference;
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://unity-rhythm-game-tutori-17ce3.firebaseio.com/");
+        reference = FirebaseDatabase.DefaultInstance.GetReference("ranks")
+            .Child(PlayerInformation.selectedMusic);
+        //데이터 셋의 모든 데이터를 JSON 형태로 가져옵니다.
+        reference.OrderByChild("score").GetValueAsync().ContinueWith(task =>
+        {
+            // 성공적으로 데이터를 가져온 경우
+            if (task.IsCompleted)
+            {
+                List<string> rankList = new List<string>();
+                List<string> emailList = new List<string>();
+                DataSnapshot snapshot = task.Result;
+                // JSON 데이터의 각 원소에 접근합니다.
+                foreach (DataSnapshot data in snapshot.Children)
+                {
+                    IDictionary rank = (IDictionary)data.Value;
+                    emailList.Add(rank["email"].ToString());
+                    rankList.Add(rank["score"].ToString());
+                }
+                //정렬 이후 순서를 뒤집어 내림차순 정렬합니다.
+                emailList.Reverse();
+                rankList.Reverse();
+                // 최대 상위 3명의 순위를 차례대로 화면에 출력합니다.
+                rank1UI.text = "플레이 한 사용자가 없습니다.";
+                rank2UI.text = "플레이 한 사용자가 없습니다.";
+                rank3UI.text = "플레이 한 사용자가 없습니다.";
+                List<Text> textList = new List<Text>();
+                textList.Add(rank1UI);
+                textList.Add(rank2UI);
+                textList.Add(rank3UI);
+                int count = 1;
+                for (int i = 0; i < rankList.Count && i < 3; i++)
+                {
+                    textList[i].text = count + "위: " + emailList[i] + " (" + rankList[i] + " 점)";
+                    count = count + 1;
+                }
+            }
+        });
+
     }
-    
+
     public void Replay()
     {
         SceneManager.LoadScene("SongSelectScene");
