@@ -20,6 +20,7 @@ public class LoginManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(1920, 1200, true);
         // 파이어베이스 인증 객체를 초기화합니다.
         auth = FirebaseAuth.DefaultInstance;
         messageUI.text = "";
