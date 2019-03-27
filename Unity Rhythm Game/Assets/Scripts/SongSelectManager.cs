@@ -45,7 +45,7 @@ public class SongSelectManager : MonoBehaviour, IStoreListener
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.Stop();
         // 리소스에서 비트 텍스트 파일을 불러옵니다.
-        TextAsset textAsset = textAssets[musicCount - 1];
+        TextAsset textAsset = textAssets[musicIndex - 1];
         StringReader stringReader = new StringReader(textAsset.text);
         // 첫 번째 줄에 적힌 곡 이름을 읽어서 UI를 업데이트합니다.
         musicTitleUI.text = stringReader.ReadLine();
@@ -54,11 +54,11 @@ public class SongSelectManager : MonoBehaviour, IStoreListener
         // 세 번째 줄에 적힌 BPM을 읽어 UI를 업데이트합니다.
         bpmUI.text = "BPM: " + stringReader.ReadLine().Split(' ')[0];
         // 리소스에서 비트 음악 파일을 불러와 재생합니다.
-        AudioClip audioClip = audioClips[musicCount - 1];
+        AudioClip audioClip = audioClips[musicIndex - 1];
         audioSource.clip = audioClip;
         audioSource.Play();
         // 리소스에서 비트 이미지 파일을 불러옵니다.
-        musicImageUI.sprite = sprites[musicCount - 1];
+        musicImageUI.sprite = sprites[musicIndex - 1];
         // 파이어베이스 접근합니다.
         DatabaseReference reference;
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://unity-rhythm-game-tutori-17ce3.firebaseio.com/");
